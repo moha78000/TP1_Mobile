@@ -4,7 +4,7 @@ import javax.swing.*;
 class UnMobile extends JPanel implements Runnable
 {
     int saLargeur, saHauteur, sonDebDessin;
-    final int sonPas = 10, sonTemps=50, sonCote=40;
+    final int sonPas = 10, sonTemps=10, sonCote=40;
     
     UnMobile(int telleLargeur, int telleHauteur)
     {
@@ -14,8 +14,7 @@ class UnMobile extends JPanel implements Runnable
 	setSize(telleLargeur, telleHauteur);
     }
 
-    public void run()
-    {
+    public void run(){
 	for (sonDebDessin=0; sonDebDessin < saLargeur - sonPas; sonDebDessin+= sonPas)
 	    {
 		repaint();
@@ -23,7 +22,16 @@ class UnMobile extends JPanel implements Runnable
 		catch (InterruptedException telleExcp)
 		    {telleExcp.printStackTrace();}
 	    }
+		for(sonDebDessin=saLargeur- sonPas ;  0 < saLargeur - sonPas  ; sonDebDessin-=sonPas){
+			repaint();
+		try{Thread.sleep(sonTemps);}
+		catch (InterruptedException telleExcp)
+		    {telleExcp.printStackTrace();}
+		}
     }
+
+
+	
 
     public void paintComponent(Graphics telCG)
     {
