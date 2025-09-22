@@ -22,7 +22,7 @@ class UnMobile extends JPanel implements Runnable
 		catch (InterruptedException telleExcp)
 		    {telleExcp.printStackTrace();}
 	    }
-		for(sonDebDessin=0 ;  0 < saLargeur - sonPas  ; sonDebDessin-=sonPas){
+		for(sonDebDessin=saLargeur- sonPas ;  0 < saLargeur - sonPas  ; sonDebDessin-=sonPas){
 			repaint();
 		try{Thread.sleep(sonTemps);}
 		catch (InterruptedException telleExcp)
