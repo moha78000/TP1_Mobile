@@ -15,21 +15,6 @@ class UneFenetre extends JFrame
         container.setLayout (new GridLayout(2 , 1)) ;
         
 
-        
-        sonMobile = new UnMobile(LARG/2, HAUT/2);
-        UnMobile sonMobile2 = new UnMobile(LARG/2, HAUT/2);
-
-        
-        container.add(sonMobile);
-        container.add(sonMobile2);
-    
-        
-        Thread thread1 = new Thread(sonMobile);
-        Thread thread2 = new Thread(sonMobile2);
-    
-
-        thread1.start(); 
-        thread2.start();
 	// TODO 
 	// ajouter sonMobile a la fenetre
 	// creer une thread1 laThread avec sonMobile
@@ -40,7 +25,7 @@ class UneFenetre extends JFrame
         Thread [] tableau = new Thread[n];
 
         for (int i=0; i<n; i++){
-            sonMobile = new UnMobile(LARG/n, HAUT/n);
+            sonMobile = new UnMobile(LARG, HAUT/n);
             container.add(sonMobile);
         
             Thread thread_i = new Thread(sonMobile);
