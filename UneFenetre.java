@@ -12,7 +12,7 @@ class UneFenetre extends JFrame
         setSize(LARG,HAUT);
         setVisible(true);
         Container container = getContentPane();
-        container.setLayout (new GridLayout(2 , 1)) ;
+        container.setLayout (new GridLayout(n , 1)) ;
         
 
 	// TODO 
