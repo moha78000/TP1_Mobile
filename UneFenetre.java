@@ -6,7 +6,7 @@ import javax.swing.*;
 class UneFenetre extends JFrame 
 {
     UnMobile sonMobile;
-    private final int LARG=400, HAUT=250, n=4;
+    private final int LARG=400, HAUT=250, n=6;
     
     public UneFenetre(){
         setSize(LARG,HAUT);
@@ -20,12 +20,14 @@ class UneFenetre extends JFrame
 	// creer une thread1 laThread avec sonMobile
 	// afficher la fenetre
 	// lancer laThread
-    
+        
+    // On limite le nombre de mobiles simultanés avec un sémaphore
+        Semaphore sem = new SemaphoreBinaire(1);
     
         Thread [] tableau = new Thread[n];
 
         for (int i=0; i<n; i++){
-            sonMobile = new UnMobile(LARG, HAUT/n);
+            sonMobile = new UnMobile(LARG, HAUT/n ,sem );
             container.add(sonMobile);
         
             Thread thread_i = new Thread(sonMobile);
