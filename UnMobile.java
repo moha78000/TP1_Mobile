@@ -42,7 +42,31 @@ class UnMobile extends JPanel implements Runnable
 		catch (InterruptedException telleExcp)
 		    {telleExcp.printStackTrace();}
 		}
-
+		for(sonDebDessin=saLargeur-sonPas ; 2*(saLargeur)/3 < sonDebDessin ; sonDebDessin-=sonPas) {
+			repaint();
+			try {
+				Thread.sleep(sonTemps);
+			} catch (InterruptedException telleExcp) {
+				telleExcp.printStackTrace();
+			}
+		}
+		for(sonDebDessin=2*(saLargeur)/3 ; sonDebDessin > saLargeur/3 ; sonDebDessin-=sonPas) {
+			repaint();
+			try {
+				Thread.sleep(sonTemps);
+			} catch (InterruptedException telleExcp) {
+				telleExcp.printStackTrace();
+			}
+		
+		}
+		for(sonDebDessin=saLargeur/3 ; sonDebDessin >= 0 ; sonDebDessin-=sonPas) {
+			repaint();
+			try {
+				Thread.sleep(sonTemps);
+			} catch (InterruptedException telleExcp) {
+				telleExcp.printStackTrace();
+			}
+		}
 
     }
 
@@ -52,9 +76,12 @@ class UnMobile extends JPanel implements Runnable
     public void paintComponent(Graphics telCG)
     {
 	super.paintComponent(telCG);
-	   if (sonDebDessin >= saLargeur / 3 && sonDebDessin < (2 * saLargeur) / 3) {
+	   if (sonDebDessin >= saLargeur / 3 && sonDebDessin < (2 * saLargeur) / 3 && sem.valeur == sem.valeur)  {
             telCG.setColor(Color.RED); // mobile en section critique
         }
+		else {
+			telCG.setColor(Color.BLUE); // mobile hors section critique
+		}
 	telCG.fillRect(sonDebDessin, saHauteur/2, sonCote, sonCote);
     }
 }
