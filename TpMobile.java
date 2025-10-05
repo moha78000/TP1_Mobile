@@ -8,15 +8,8 @@ public class TpMobile
     public static void main(String[] telsArgs) {
 	
        new UneFenetre();
-        Affichage TA = new Affichage("AAA");
-		Affichage TB = new Affichage("BB");
-		Affichage TC = new Affichage("CCC");
-		Affichage TD = new Affichage("DD");
+        
 
-		TB.start();
-		TC.start();
-		TA.start();
-		TD.start();
- 	
+		
     }
 }

@@ -22,12 +22,12 @@ class UneFenetre extends JFrame
 	// lancer laThread
         
     // On limite le nombre de mobiles simultanés avec un sémaphore
-        Semaphore sem = new SemaphoreBinaire(1);
+        Semaphore sem = new Semaphore(1) {};
     
         Thread [] tableau = new Thread[n];
 
         for (int i=0; i<n; i++){
-            sonMobile = new UnMobile(LARG, HAUT/n ,sem );
+            sonMobile = new UnMobile(LARG, HAUT/n, sem );
             container.add(sonMobile);
         
             Thread thread_i = new Thread(sonMobile);
