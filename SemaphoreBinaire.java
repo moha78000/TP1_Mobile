@@ -6,7 +6,8 @@ public SemaphoreBinaire(int valeurInitiale){
 public final synchronized void syncSignal(){
 	super.syncSignal();
 	//System.out.print(valeur);
-	if (valeur>1) valeur = 1;
+	if (valeur>1) valeur = 1;  // Une place de libre dans la session critique
 }
 }
+
 
