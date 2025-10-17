@@ -50,6 +50,7 @@ class UnMobile extends JPanel implements Runnable
 				telleExcp.printStackTrace();
 			}
 		}
+		sem.syncWait();
 		for(sonDebDessin=2*(saLargeur)/3 ; sonDebDessin > saLargeur/3 ; sonDebDessin-=sonPas) {
 			repaint();
 			try {
@@ -58,7 +59,9 @@ class UnMobile extends JPanel implements Runnable
 				telleExcp.printStackTrace();
 			}
 		
+		
 		}
+		sem.syncSignal();
 		for(sonDebDessin=saLargeur/3 ; sonDebDessin >= 0 ; sonDebDessin-=sonPas) {
 			repaint();
 			try {
